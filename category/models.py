@@ -9,7 +9,7 @@ class Category(models.Model):
         ('A', 'Approved'),
         ('B', 'Blocked'),
     )
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=200, unique=True)
     description = models.TextField(max_length=5000, blank=True, null=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
