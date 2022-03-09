@@ -16,3 +16,5 @@ class Category(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.CharField(verbose_name="Category Status", max_length=1, choices=CATEGORY_CHOICES, default='P')
 
+    def __str__(self):
+        return self.name
