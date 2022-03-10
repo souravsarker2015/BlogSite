@@ -26,12 +26,17 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True, null=True, blank=True)
     status = models.CharField(max_length=1, choices=POST_STATUS_CHOICES, default='P')
 
+    class Meta:
+        db_table = "Post"
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
     def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):
         def unique_code():
-            print(str(datetime.datetime.now().timestamp()))
+            # print(str(datetime.datetime.now().timestamp()))
             return str(datetime.datetime.now().timestamp() * pow(10, 6))
 
         if not self.slug:
