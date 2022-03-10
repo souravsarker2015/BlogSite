@@ -1,5 +1,9 @@
+import datetime
+
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.text import slugify
+
 from category.models import Category
 
 
@@ -24,3 +28,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        def unique_code():
+            print(str(datetime.datetime.now().timestamp()))
+            return str(datetime.datetime.now().timestamp() * pow(10, 6))
+
+        if not self.slug:
+            self.slug = slugify(self.title + unique_code())
+
+        return super().save(*args, **kwargs)
