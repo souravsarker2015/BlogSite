@@ -23,3 +23,18 @@ class Category(models.Model):
         db_table = "Category"
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+
+
+"""
+from posts.models import Post
+for post in Post.objects.all():
+    print(post.id)
+    
+3
+4
+5
+6
+p1=Post.objects.get(id=3)
+p1
+<Post: My Educational Post 1>
+"""
