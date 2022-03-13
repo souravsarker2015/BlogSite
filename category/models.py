@@ -37,4 +37,12 @@ for post in Post.objects.all():
 p1=Post.objects.get(id=3)
 p1
 <Post: My Educational Post 1>
+
+Model Manager
+➢ A Manager is the interface through which database query operations are provided
+to Django models.
+➢ At least one Manager exists for every model in a Django application.
+➢ Django adds a Manager with the name objects to every Django model class.
+➢ We can also create our own model manager or modify the functionality of existing
+model manager
 """
