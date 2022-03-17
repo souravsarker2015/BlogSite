@@ -12,4 +12,5 @@ for comment in Comment.objects.all():
 >>> cmt2.save()
 cmt2.post
 <Post: My Educational Post 1>
+new orm
 """
